@@ -6,11 +6,6 @@
 /* Max number of running transactions */
 #define MAX_TRANSACTIONS            4096
 
-/* Transaction status */
-#define STATUS_UNDEFINED            1
-#define STATUS_RUNNING              2
-#define STATUS_COMMITED             3
-
 struct ui_list {
   unsigned int elements[MAX_TRANSACTIONS];
   unsigned int size;
