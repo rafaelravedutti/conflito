@@ -90,6 +90,7 @@ int _check_seriability(struct vertex *vertex, char *visited) {
     }
 
     visited[edge->edge_dest->vertex_number] = 1;
+
     if(_check_seriability(edge->edge_dest, visited) == 0) {
       return 0;
     }
