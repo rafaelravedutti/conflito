@@ -54,7 +54,6 @@ void delete(struct ui_list *list, unsigned int element);
 int find(struct ui_list *list, unsigned int element);
 int empty(struct ui_list *list);
 
-
 int check_seriability(struct graph *graph) {
   struct vertex *vertex;
   char *visited;
@@ -91,7 +90,10 @@ int _check_seriability(struct vertex *vertex, char *visited) {
     }
 
     visited[edge->edge_dest->vertex_number] = 1;
-    _check_seriability(edge->edge_dest, visited);
+
+    if(_check_seriability(edge->edge_dest, visited) == 0) {
+      return 0;
+    }
   }
 
   return 1;
